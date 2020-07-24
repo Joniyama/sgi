@@ -13,6 +13,8 @@ nameform.addEventListener('submit', function(event){
   nameform.style.display ="none";
   form.style.display ="block";
 })
+socketio.emit('signin');
+
 form.addEventListener('submit', function(event){
   const msg = JSON.stringify({msg: input.value, name: username})
   socketio.emit('message', msg);
