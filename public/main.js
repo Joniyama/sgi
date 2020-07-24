@@ -8,10 +8,11 @@ const name = document.getElementById("name");
 
 let username='';
 nameform.addEventListener('submit', function(event){
+  if(name.value!==''){
   username = name.value;
-  event.preventDefault();
   nameform.style.display ="none";
   form.style.display ="block";
+
 })
 socketio.emit('signin');
 
